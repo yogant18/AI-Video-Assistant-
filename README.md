@@ -46,7 +46,7 @@ Audio/Video Input → Transcription → Title Generation → Summarization → E
 
 1. Clone the repo
 ```bash
-git clone https://github.com/AkarshVyas/AI-Video-Assistant-.git
+git clone https://github.com/yogant18/AI-Video-Assistant-.git
 cd AI-Video-Assistant-
 ```
 

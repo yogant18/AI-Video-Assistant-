@@ -1,5 +1,10 @@
 # 🎬 VideoMind — AI Video Assistant
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://h5cyslt96f75qpzbias7xz.streamlit.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://h5cyslt96f75qpzbias7xz.streamlit.app/)
+
+🚀 **Live Demo:** [https://h5cyslt96f75qpzbias7xz.streamlit.app/](https://h5cyslt96f75qpzbias7xz.streamlit.app/)
+
 Turn any YouTube video or local audio/video file into a transcript, summary, and a chat-ready knowledge base. Ask questions about the content and get answers pulled straight from the transcript using RAG (Retrieval-Augmented Generation).
 
 ## ✨ Features
@@ -64,7 +69,11 @@ MISTRAL_API_KEY=your_key_here
 
 ## 🚀 Usage
 
-### Option 1: Web UI (Streamlit)
+### 🌐 Live Demo
+Experience the app without any local setup:
+👉 **[Launch Streamlit App](https://h5cyslt96f75qpzbias7xz.streamlit.app/)**
+
+### Option 1: Web UI (Streamlit - Local)
 ```bash
 streamlit run app.py
 ```

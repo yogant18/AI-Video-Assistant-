@@ -14,14 +14,11 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
 
 import streamlit as st
 import time
-from dotenv import load_dotenv
-from utils.audio_processor import process_input
-from core.transcriber import transcribe_all
-from core.summarizer import summarize, generate_title
-from core.extractor import extract_action_items, extract_key_decisions, extract_questions
-from core.rag_engine import build_rag_chain, ask_question
-
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # Sync Streamlit Cloud secrets into os.environ
 try:
@@ -31,6 +28,12 @@ try:
                 os.environ[key] = val
 except Exception:
     pass
+
+from utils.audio_processor import process_input
+from core.transcriber import transcribe_all
+from core.summarizer import summarize, generate_title
+from core.extractor import extract_action_items, extract_key_decisions, extract_questions
+from core.rag_engine import build_rag_chain, ask_question
 
 # ─── Page Config ────────────────────────────────────────────────────────────────
 st.set_page_config(

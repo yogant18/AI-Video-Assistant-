@@ -8,7 +8,7 @@ from core.extractor import extract_action_items, extract_key_decisions, extract_
 
 
 source = "https://www.youtube.com/watch?v=_Q-e_nczWqM&t=223s"
-language = "english"   # "english" → Whisper, "hinglish" → Sarvam
+language = "english"   # "english" -> Whisper, "hinglish" -> Sarvam
 
 
 

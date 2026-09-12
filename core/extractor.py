@@ -7,8 +7,10 @@ from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 import os 
 
 
+MISTRAL_MODEL = os.getenv("MISTRAL_MODEL", "open-mistral-7b")
+
 def get_llm():
-    return ChatMistralAI(model = "mistral-small-latest", mistral_api_key = os.getenv("MISTRAL_API_KEY"),temperature=0.2)
+    return ChatMistralAI(model=MISTRAL_MODEL, mistral_api_key=os.getenv("MISTRAL_API_KEY"), temperature=0.2)
 
 
 

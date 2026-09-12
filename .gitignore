@@ -1,1 +1,35 @@
+# Environment & Secrets
 .env
+.env.*
+!.env.example
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Audio & Vector DB scratch directories
+temp_audio/
+vector_db/
+*.wav
+*.mp3
+*.mp4
+*.webm
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE & Editor configs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

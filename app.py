@@ -1,3 +1,17 @@
+import sys
+import os
+
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+if sys.stderr and hasattr(sys.stderr, "reconfigure"):
+    try:
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 import streamlit as st
 import time
 from dotenv import load_dotenv
@@ -8,6 +22,15 @@ from core.extractor import extract_action_items, extract_key_decisions, extract_
 from core.rag_engine import build_rag_chain, ask_question
 
 load_dotenv()
+
+# Sync Streamlit Cloud secrets into os.environ
+try:
+    if hasattr(st, "secrets"):
+        for key, val in st.secrets.items():
+            if key not in os.environ and isinstance(val, str):
+                os.environ[key] = val
+except Exception:
+    pass
 
 # ─── Page Config ────────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -512,7 +535,7 @@ if st.session_state.result:
     with chat_col1:
         user_input = st.text_input("Your question", placeholder="What were the main decisions made?", label_visibility="collapsed")
     with chat_col2:
-        send_btn = st.button("Send →", use_container_width=True)
+        send_btn = st.button("Send 🚀", use_container_width=True)
 
     if send_btn and user_input.strip():
         with st.spinner("Thinking…"):
